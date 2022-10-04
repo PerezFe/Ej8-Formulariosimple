@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Formulario from './components/Formulario';
 import "./app.css"
 import { useState } from 'react';
+import Swal from "sweetalert2"
+
 
 
 
@@ -22,7 +24,7 @@ function App() {
       placeholder:"Juan",
       mensajeError:"Nombre debe contener entre 3-16 caracteres y no incluir ningun caracter especial",
       label:"Nombre",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+      pattern: "^[A-Za-z0]{3,16}$",
       required: true,
     },
     {
@@ -38,7 +40,7 @@ function App() {
     {
       id:3,
       name:"userdni",
-      type:"number",
+      type:"text",
       placeholder:"27654158",
       mensajeError:"DNI deberia tener min 8 numeros y no incluir ningun caracter especial",
       label:"DNI",
@@ -59,7 +61,11 @@ function App() {
   
   const handleSubmit = (e)=>{
     e.preventDefault();
-    
+    Swal.fire("Formulario enviado exitosamente")
+    setValores({username:"",
+    userlastname:"",
+    userdni:"",
+    useremail:""});
   }
 
   const onChange = (e)=>{
@@ -82,9 +88,11 @@ function App() {
           {...input} 
           value={valores[input.name]} 
           onChange={onChange}/>
+
         ))}
-          <button>Enviar</button>
+          <button type='submit'>Enviar</button>
       </form>
+
     </div>
     </section>
   );

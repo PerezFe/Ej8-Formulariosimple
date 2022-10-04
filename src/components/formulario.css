@@ -17,6 +17,10 @@ span{
     display: none;
 }
 
-input:invalid ~ span{
+input:invalid[perderfoco="true"]{
+    border: 2px solid red;
+}
+
+input:invalid[perderfoco="true"] ~ span{
     display: block;
 }

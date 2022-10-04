@@ -3,4 +3,7 @@
 
 ## Formulario simple
 
-
+### Librerias
+    
+   - Sweetalert2
+   
