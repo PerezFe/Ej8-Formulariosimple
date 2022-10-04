@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Formulario from './components/Formulario';
+import Formulario from './components/Formulario.jsx';
 import "./app.css"
 import { useState } from 'react';
 import Swal from "sweetalert2"
